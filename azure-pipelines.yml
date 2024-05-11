@@ -32,6 +32,7 @@ steps:
      archiveType: zip
      archiveFile:$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-$(python.version).zip
      replaceExistingArchive: false
+     
 - task: PublishBuildArtifacts@1
    inputs:
      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
