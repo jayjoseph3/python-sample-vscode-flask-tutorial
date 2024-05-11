@@ -30,7 +30,7 @@ steps:
      rootFolderOrFile: $(System.DefaultWorkingDirectory)
      includeRootFolder: false
      archiveType: zip
-     archiveFile:$(Build.ArtifactStagingDirectory)/$(Build.BuildID)-$(python.version).zip
+     archiveFile:$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-$(python.version).zip
      replaceExistingArchive: true
 
  - task: PublishBuildArtifacts@1
