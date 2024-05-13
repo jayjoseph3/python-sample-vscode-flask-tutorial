@@ -14,7 +14,7 @@ strategy:
     python.version: '3.12'
 
 steps:
- - task: UsePythonVersion@
+ - task: UsePythonVersion@0
    inputs:
      versionSpec: '$(python.version)'
    displayName: 'Use Python $(python.version)'
@@ -33,7 +33,7 @@ steps:
      archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-$(python.version).zip
      replaceExistingArchive: false
 
-- task: PublishBuildArtifacts@1
+ - task: PublishBuildArtifacts@1
    inputs:
      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
      ArtifactName: 'drop'
@@ -43,4 +43,3 @@ steps:
      pip install pytest pytest-azurepipelines
      pytest
    displayName: 'pytest'
-)
